@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Heading } from '@chakra-ui/react';
 import Booklist from './components/Booklist';
 import AddingBook from './components/AddingBook';
 import Book from './components/Book';
@@ -7,6 +7,7 @@ import Book from './components/Book';
 const App = () => {
   return (
     <Box p={5}>
+      <Heading textAlign={"center"}>Book-Store </Heading>
       <Booklist />
       <Flex 
         direction={{ base: 'column', md: 'row' }} 
