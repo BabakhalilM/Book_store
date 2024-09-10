@@ -9,7 +9,7 @@ const Booklist = () => {
   const [searchTitle, setSearchTitle] = useState('');
 
   const handleSearch = () => {
-    searchBooks({ title: searchTitle});
+    searchBooks({ name: searchTitle});
   };
 
   return (

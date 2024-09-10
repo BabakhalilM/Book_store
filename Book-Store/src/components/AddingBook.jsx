@@ -4,14 +4,13 @@ import { Apicontext } from './Contextapi';
 
 const AddingBook = () => {
     const { addBook } = useContext(Apicontext);
-
     const [title, setTitle] = useState('');
     const [image, setImage] = useState('');
     const [description, setDescription] = useState('');
     const [genre, setGenre] = useState('fiction');
   
     const handleSubmit = () => {
-      const newBook = { title, image, description, genre };
+      const newBook = {title,image,description,genre };
       addBook(newBook);
     };
   
@@ -40,4 +39,4 @@ const AddingBook = () => {
     );
   };
 
-export default AddingBook
+export default AddingBook;

@@ -7,10 +7,10 @@ import { ApicontextProvider } from './components/Contextapi.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-     <ChakraProvider>
+    <ChakraProvider>
       <ApicontextProvider>
-    <App />
-    </ApicontextProvider>
+        <App />
+      </ApicontextProvider>
     </ChakraProvider>
   </StrictMode>,
 )

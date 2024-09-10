@@ -1,16 +1,25 @@
-// src/components/BookItem.js
+
 import React, { useContext } from 'react';
 import { Apicontext } from './Contextapi';
-import { Box, Text, Image, Button, Card, CardBody, CardFooter, Heading } from '@chakra-ui/react';
+import { Box, Text, Image, Button, Card, CardBody, CardFooter, Heading, SimpleGrid, Flex } from '@chakra-ui/react';
 
 const Book = () => {
     const { books, deleteBook } = useContext(Apicontext);
 
     return (
         <>
-            <Heading>All Books Available</Heading>
+              <Heading textAlign={"center"}>All Books Available</Heading>
+            {books.length==0 && <Text>No Books Avaulable</Text> }
+        
+            <Flex
+                wrap="wrap"
+                justify='space-around'
+                gap={4}
+
+            >
             {
                 books.map(book => (
+                    
                     <Card borderWidth="1px" borderRadius="lg" p={4} mb={4}>
                         <CardBody>
                             <Heading size="md" mb={2}>Title: {book.title}</Heading>
@@ -27,6 +36,7 @@ const Book = () => {
                     </Card>
                 ))
             }
+            </Flex>
         </>
     );
 

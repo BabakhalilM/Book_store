@@ -21,6 +21,7 @@ export const ApicontextProvider = ({ children }) => {
 
     const searchBooks = async (query) => {
         try {
+            console.log("query serch",query);
             const response = await axios.get('http://localhost:3001/api/search-book', { params: query });
             console.log(response);
             setBooks(response.data);
@@ -50,7 +51,7 @@ export const ApicontextProvider = ({ children }) => {
             console.error("Error deleting book:", err);
         }
     };
-    
+
     return (
         <Apicontext.Provider value={{
             deleteBook,

@@ -16,14 +16,12 @@ bookrouter.get('/allbooks', (req, res) => {
   console.log("Books data",books);
   res.json(book);
 });
-// Search Book
 bookrouter.get('/search-book', (req, res) => {
   const { name} = req.query;
   const results = books.filter(book => book.title.includes(name));
   res.json(results);
 });
 
-// Delete Book
 bookrouter.delete('/delete-book/:id', (req, res) => {
   const id = parseInt(req.params.id);
   books = books.filter(book => book.id !== id);
