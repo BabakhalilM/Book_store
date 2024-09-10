@@ -1,0 +1,35 @@
+// src/components/BookItem.js
+import React, { useContext } from 'react';
+import { Apicontext } from './Contextapi';
+import { Box, Text, Image, Button, Card, CardBody, CardFooter, Heading } from '@chakra-ui/react';
+
+const Book = () => {
+    const { books, deleteBook } = useContext(Apicontext);
+
+    return (
+        <>
+            <Heading>All Books Available</Heading>
+            {
+                books.map(book => (
+                    <Card borderWidth="1px" borderRadius="lg" p={4} mb={4}>
+                        <CardBody>
+                            <Heading size="md" mb={2}>Title: {book.title}</Heading>
+                            <Text>Genre: {book.genre}</Text>
+                            <details>
+                                <summary>Book Description</summary>
+                                <Text>{book.description}</Text>
+                            </details>
+                            <Image src={book.image} alt={book.title} boxSize="150px" mt={3} />
+                        </CardBody>
+                        <CardFooter>
+                            <Button colorScheme="red" onClick={() => deleteBook(book.id)}>Delete</Button>
+                        </CardFooter>
+                    </Card>
+                ))
+            }
+        </>
+    );
+
+};
+
+export default Book;
