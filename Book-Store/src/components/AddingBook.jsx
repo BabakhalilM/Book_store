@@ -6,11 +6,12 @@ const AddingBook = () => {
     const { addBook } = useContext(Apicontext);
     const [title, setTitle] = useState('');
     const [image, setImage] = useState('');
+    const [author,setAuthor]=useState('');
     const [description, setDescription] = useState('');
     const [genre, setGenre] = useState('fiction');
   
     const handleSubmit = () => {
-      const newBook = {title,image,description,genre };
+      const newBook = {title,author,image,description,genre };
       addBook(newBook);
     };
   
@@ -21,6 +22,11 @@ const AddingBook = () => {
             <FormLabel>Title</FormLabel>
             <Input value={title} onChange={(e) => setTitle(e.target.value)} />
           </FormControl>
+          <FormControl>
+          <FormLabel>Athour</FormLabel>
+            <Input value={author} onChange={(e) => setAuthor(e.target.value)} />
+          </FormControl>
+
           <FormControl>
             <FormLabel>Image URL</FormLabel>
             <Input value={image} onChange={(e) => setImage(e.target.value)} />

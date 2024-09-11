@@ -24,6 +24,7 @@ const Book = () => {
                         <CardBody>
                             <Heading size="md" mb={2}>Title: {book.title}</Heading>
                             <Text>Genre: {book.genre}</Text>
+                            <Text>{book.author? `${book.author}`:"No author"}</Text>
                             <details>
                                 <summary>Book Description</summary>
                                 <Text>{book.description}</Text>
